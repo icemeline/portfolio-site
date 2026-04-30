@@ -1,0 +1,46 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 100vh; */
+}
+
+.container {
+    width: 400px;
+}
+
+img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.container, .card, .card-body, .list-group-item {
+    background-color: aquamarine;
+}
+
+
+#progress .times, .card-footer, .volume-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* .material-symbols-outlined {
+    font-size: 10px;
+} */
+
+.shadow-lg {
+    box-shadow: white;
+}
+
+.volume-container i {
+    margin-right: 5px;
+}
+
+li.playing {
+    background-color: rebeccapurple;
+    color: white;
+}
+
+
