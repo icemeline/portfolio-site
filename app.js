@@ -2,9 +2,9 @@ const container = document.querySelector(".container");
 const image = document.getElementById("music-image");
 const title = document.querySelector("#music-details .title");
 const singer = document.querySelector("#music-details .singer");
-const prev = document.querySelector("#controls #prev");
-const play = document.querySelector("#controls #play");
-const next = document.querySelector("#controls #next");
+const goToPrevBtn = document.querySelector("#controls #prev");
+const playBtn = document.querySelector("#controls #play");
+const goToNextBtn = document.querySelector("#controls #next");
 const duration = document.getElementById("duration");
 const currentTime = document.getElementById("current-time");
 const progressBar = document.getElementById("progress-bar");
@@ -30,21 +30,21 @@ function displayMusic(music) {
     audio.src = "mp3/" + music.file;
 }
 
-play.addEventListener("click", () => {
+playBtn.addEventListener("click", () => {
     const isMusicPlay = container.classList.contains("playing");
     isMusicPlay ? pauseMusic() : playMusic(); 
 });
 
-prev.addEventListener("click", () => {
+goToPrevBtn.addEventListener("click", () => {
     prevMusic();
 });
 
-next.addEventListener("click", () => {
+goToNextBtn.addEventListener("click", () => {
     nextMusic();
 });
 
 function prevMusic() {
-    player.prev();
+    player.goToPrevBtn();
     let music = player.getMusic();
     displayMusic(music);
     playMusic();
@@ -52,7 +52,7 @@ function prevMusic() {
 }
 
 function nextMusic() {
-    player.next();
+    player.goToNextBtn();
     let music = player.getMusic();
     displayMusic(music);
     playMusic();
@@ -61,13 +61,13 @@ function nextMusic() {
 
 function pauseMusic() {
     container.classList.remove("playing");
-    play.querySelector("i").classList = "fa-solid fa-play";
+    playBtn.querySelector("i").classList = "fa-solid fa-play";
     audio.pause();
 };
 
 function playMusic() {
     container.classList.add("playing");
-    play.querySelector("i").classList = "fa-solid fa-pause";
+    playBtn.querySelector("i").classList = "fa-solid fa-pause";
     audio.play();
 };
 
