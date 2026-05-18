@@ -9,7 +9,7 @@ class MusicPlayer {
         return this.musicList[this.index];
     }
 
-    next() {
+    goToNextBtn() {
         if(this.index + 1 < this.musicList.length) {
             this.index++;
         }
@@ -19,7 +19,7 @@ class MusicPlayer {
         // this.index = (this.index + 1) % this.musicList.length;
     }
 
-    prev() {
+    goToPrevBtn() {
         if(this.index != 0) {
             this.index--;
         } else {
